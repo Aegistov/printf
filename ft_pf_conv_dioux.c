@@ -37,7 +37,7 @@ int		ft_printf_u(va_list insertion, t_mods *mod)
 
 	ft_pf_str_init(&nbr);
 	nbr.arg.mint = ft_pf_ucast(mod, insertion);
-	// printf("[ft_printf_u] nbr: %llu\n", (unsigned long long)nbr.arg.mint);
+	// printf("[ft_printf_u] nbr: %lu\n", (unsigned long)nbr.arg.mint);
 	count = 0;
 	nbr.num_str = ft_pf_ud_toa_dispatch(mod, nbr.arg.mint, 10);
 	// printf("[ft_printf_u] str: %s\n", nbr.num_str);

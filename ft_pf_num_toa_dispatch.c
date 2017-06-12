@@ -31,7 +31,7 @@ char	*ft_pf_ud_toa_dispatch(t_mods *mod, uintmax_t nbr, int base)
 	char	*str;
 
 	str = NULL;
-	if (mod->length == ll || mod->length == z || mod->length == j)
+	if (mod->length == ll || mod->length == z || mod->length == j || mod->length == l)
 		str = (mod->arg == 'X') ? ft_pf_llutoa_base_up(nbr, base) :
 			ft_pf_llutoa_base(nbr, base);
 	else if (mod->length == hh)

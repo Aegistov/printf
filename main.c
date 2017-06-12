@@ -423,14 +423,14 @@ int		basics_047(void)
 	return (base_printf - my_printf);
 }
 
-int		basics_047(void)
+int		basics_190(void)
 {
 	int		my_printf;
 	int		base_printf;
 
-	printf("[basics_047](@moulitest: %%.x %%.0x)\n\n");
-	my_printf = ft_printf("@moulitest: %.x %.0xEND\n", 0, 0);
-	base_printf = printf("@moulitest: %.x %.0xEND\n", 0, 0);
+	printf("[basics_190]('%%lu\\n', '-42')\n\n");
+	my_printf = ft_printf("%lu\n", (unsigned long)"-42");
+	base_printf = printf("%lu\n", (unsigned long)"-42");
 	printf("Return Values:\nft_printf: %d\tprintf: %d\n", my_printf, base_printf);
 	printf("\n\n");
 	return (base_printf - my_printf);
@@ -465,7 +465,7 @@ int		main(void)
 	// printf("Difference: %d\n", sign_big_width_small_precision_test_for_number());
 	// printf("Difference: %d\n", zero_width_precision_test_for_number());
 	// printf("Difference: %d\n", empty_precision_test_for_number());
-	// printf("Difference: %d\n", basic_unsigned_long_test_for_number());
+	printf("Difference: %d\n", basic_unsigned_long_test_for_number());
 	// printf("Difference: %d\n", hexadecimal_long_test_for_number());
 	// printf("Difference: %d\n", test_precision_d_higher_min_width_neg());
 	// printf("Difference: %d\n", test_precision_d_zero_value());
@@ -486,5 +486,6 @@ int		main(void)
 	// printf("Difference: %d\n", test_zero());
 	// printf("Difference: %d\n", pZero_minus13MinWidth());
 	// printf("Difference: %d\n", basics_047());
+	// printf("Difference: %d\n", basics_190());
 
 }
