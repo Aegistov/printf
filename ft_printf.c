@@ -32,8 +32,8 @@ int		ft_printf(const char *restrict format, ...)
 		{
 			if (format[index + 1] == '%')
 			{
-				ft_putchar_fd(format[index], 1);
-				index++;
+				ft_putchar_fd(format[index + 1], 1);
+				index += 2;
 			}
 			else if (format[index + 1] != '\0')
 			{
