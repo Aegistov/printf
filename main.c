@@ -363,7 +363,7 @@ int		test_err_hho_up_max(void)
 	int		base_printf;
 
 	printf("[test_err_hho_up_max]\n\n");
-	my_printf = ft_printf("%hhO, %hhO\n", (unsigned char)0, (long int)65535);
+	my_printf = ft_printf("%hhO, %hhO\n", (unsigned char)0, (short int)65535);
 	base_printf = printf("%hhO, %hhO\n", (unsigned char)0, (unsigned char)65535);
 	printf("Return Values:\nft_printf: %d\tprintf: %d\n", my_printf, base_printf);
 	printf("\n\n");
@@ -436,6 +436,32 @@ int		basics_190(void)
 	return (base_printf - my_printf);
 }
 
+int		test_hhd(void)
+{
+	int		my_printf;
+	int		base_printf;
+
+	printf("[test_hhd]\n\n");
+	my_printf = ft_printf("%d - %d", SHRT_MAX - 42,  SHRT_MAX - 4200);
+	base_printf = printf("%d - %d", SHRT_MAX - 42,  SHRT_MAX - 4200);
+	printf("Return Values:\nft_printf: %d\tprintf: %d\n", my_printf, base_printf);
+	printf("\n\n");
+	return (base_printf - my_printf);
+}
+
+int		basics_mtest(void)
+{
+	int		my_printf;
+	int		base_printf;
+
+	printf("[basics_mtest]\n\n");
+	my_printf = ft_printf("002147483647-21474836482147483647-2147483648%d\n", 0000042);
+	base_printf = printf("002147483647-21474836482147483647-2147483648%d\n", 0000042);
+	printf("Return Values:\nft_printf: %d\tprintf: %d\n", my_printf, base_printf);
+	printf("\n\n");
+	return (base_printf - my_printf);
+}
+
 int		main(void)
 {
 	// char 	*tmp;
@@ -465,7 +491,7 @@ int		main(void)
 	// printf("Difference: %d\n", sign_big_width_small_precision_test_for_number());
 	// printf("Difference: %d\n", zero_width_precision_test_for_number());
 	// printf("Difference: %d\n", empty_precision_test_for_number());
-	printf("Difference: %d\n", basic_unsigned_long_test_for_number());
+	// printf("Difference: %d\n", basic_unsigned_long_test_for_number());
 	// printf("Difference: %d\n", hexadecimal_long_test_for_number());
 	// printf("Difference: %d\n", test_precision_d_higher_min_width_neg());
 	// printf("Difference: %d\n", test_precision_d_zero_value());
@@ -487,5 +513,7 @@ int		main(void)
 	// printf("Difference: %d\n", pZero_minus13MinWidth());
 	// printf("Difference: %d\n", basics_047());
 	// printf("Difference: %d\n", basics_190());
+	// printf("Difference: %d\n", basics_mtest());
+	printf("Difference: %d\n", test_hhd());
 
 }

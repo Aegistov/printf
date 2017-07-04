@@ -62,11 +62,6 @@ char			*ft_pf_hhdtoa_base(char n, int base)
 	// printf("[ft_itoa] size:%jd\n", size);
 	if (n == 0)
 		return ("0");
-	// else if ((unsigned long)n == 18446744073709551574U)
-	// {
-	// 	str = ft_strdup("18446744073709551574");
-	// 	return (str);
-	// }
 	else
 	{
 		if (!(str = (char*)malloc(sizeof(char) * size)))
@@ -75,10 +70,11 @@ char			*ft_pf_hhdtoa_base(char n, int base)
 			str[0] = '-';
 		str[size--] = '\0';
 		// size--;
-		while (n >= base || n < -base)
+		while (n >= base || n <= -base)
 		{
 			str[size] = hex[(n % base) * (n < 0 ? -1 : 1)];
 			n /= base;
+			// printf("str[size]: %c\tn: %hhd\n", str[size], n);
 			size--;
 		}
 		str[size] = hex[(n % base) * (n < 0 ? -1 : 1)];

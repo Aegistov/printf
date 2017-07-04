@@ -31,14 +31,15 @@ int		ft_printf_p(va_list insertion, t_mods *mod)
 	// if (mod->width < 0)
 	// 	mod->width = 0;
 	count = ft_pf_num_print_order(mod, &nbr);
-	if (mod->precision > mod->width)
-	{
-		// printf("Case 1\tLen: %d\tPrecision: %d\tCount: %dWidth: %d\n", nbr.len, mod->precision, count, mod->width);
-		return (nbr.len + count);
-	}
-	else
-	{
-		// printf("Case 2\tLen: %d\tPrecision: %d\tCount: %dWidth: %d\n", nbr.len, mod->precision, count, mod->width);
-		return (nbr.len + mod->width + count);	
-	}
+	return(ft_pf_return(mod, &nbr, count));
+	// if (mod->precision > mod->width)
+	// {
+	// 	// printf("Case 1\tLen: %d\tPrecision: %d\tCount: %dWidth: %d\n", nbr.len, mod->precision, count, mod->width);
+	// 	return (nbr.len + count);
+	// }
+	// else
+	// {
+	// 	// printf("Case 2\tLen: %d\tPrecision: %d\tCount: %dWidth: %d\n", nbr.len, mod->precision, count, mod->width);
+	// 	return (nbr.len + mod->width + count);	
+	// }
 }

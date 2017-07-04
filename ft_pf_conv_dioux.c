@@ -17,7 +17,10 @@ int		ft_printf_di(va_list insertion, t_mods *mod)
 	t_pf_string	nbr;
 	int		count;
 
+	// printf("land here\n");
 	ft_pf_str_init(&nbr);
+	if (mod->arg == 'D')
+		mod->length = l;
 	nbr.arg.mint = ft_pf_cast(mod, insertion);
 	count = 0;
 	// printf("[ft_printf_di] nbr: %jd\n", nbr.arg.mint);
@@ -37,6 +40,8 @@ int		ft_printf_u(va_list insertion, t_mods *mod)
 
 	ft_pf_str_init(&nbr);
 	nbr.arg.mint = ft_pf_ucast(mod, insertion);
+	if (mod->arg == 'U')
+		mod->length = l;
 	// printf("[ft_printf_u] nbr: %lu\n", (unsigned long)nbr.arg.mint);
 	count = 0;
 	nbr.num_str = ft_pf_ud_toa_dispatch(mod, nbr.arg.mint, 10);
@@ -57,6 +62,8 @@ int		ft_printf_o(va_list insertion, t_mods *mod)
 	count = 0;
 	if (mod->hash == 1)
 		mod->hash = o;
+	if (mod->arg == 'O')
+		mod->length = ll;
 	// if (nbr.arg.mint == 0)
 	// {
 	// 	ft_putchar_fd('0', 1);

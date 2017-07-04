@@ -14,8 +14,8 @@
 void	ft_pf_num_prefix(t_mods *mod, t_pf_string *nbr, int *count)
 {
 	// printf("Entered\n");
-	*count += ft_pf_num_sign(mod, nbr->neg, nbr->wpad, nbr->arg.mint);
-	if (mod->hash == x && !(mod->p_active && (nbr->len == 1 && nbr->num_str[0] == '0')))
+	*count += ft_pf_num_sign(mod, nbr->neg, nbr->wpad);
+	if (mod->hash == x && !(mod->p_active && (nbr->len == 1 && nbr->num_str[0] == '0' && mod->arg != 'p')))
 	{
 		// if (mod->arg == 'o')
 		// 	ft_putstr_fd("0", 1);

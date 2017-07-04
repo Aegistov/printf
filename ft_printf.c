@@ -30,7 +30,17 @@ int		ft_printf(const char *restrict format, ...)
 	{
 		if (format[index] == '%')
 		{
-			len += ft_printf_parse(format, arguments, &index);
+			if (format[index + 1] != '\0')
+			{
+				// printf("Activated\n");
+				// index++;
+				// len += ft_strlen(format);
+				// index++;
+				len += ft_printf_parse(format, arguments, &index);
+				index++;
+			}
+			else
+				return (0);
 			// printf("len after parse: %d\n", len);
 		}
 		else
