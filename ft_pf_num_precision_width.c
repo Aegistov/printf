@@ -30,9 +30,9 @@ void	ft_pf_num_width_pad(t_mods *mod, t_pf_string *nbr)
 		width = (nbr->len == 1 && nbr->num_str[0] == '0' && mod->p_active) ? mod->width : mod->width - (nbr->len + flag_sign + hash);
 			// width = mod->width - (nbr->len + flag_sign + nbr->neg);
 		// printf("Width is: %d\n", width);
-		if (mod->zero && !nbr->ppad)
-			nbr->wpad = ft_strfill(nbr->wpad, '0', width);
-		else
+		// if (mod->zero && !nbr->ppad)
+		// 	nbr->wpad = ft_strfill(nbr->wpad, '0', width);
+		// else
 			nbr->wpad = ft_strfill(nbr->wpad, ' ', width);
 		// printf("1mod->width is: %d\n", mod->width - (nbr->len + flag_sign) - 2);
 		if (!(nbr->len == 1 && nbr->num_str[0] == '0' && mod->p_active))
