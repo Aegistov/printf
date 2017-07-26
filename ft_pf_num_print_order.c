@@ -25,7 +25,7 @@ void	ft_pf_num_prefix(t_mods *mod, t_pf_string *nbr, int *count)
 			ft_putstr_fd("0X", 1);
 		*count += mod->hash;
 	}
-	if (mod->hash == 1)
+	if (mod->hash == 1 && nbr.num_str != "0")
 	{
 		ft_putstr_fd("0", 1);
 		// printf("hash: %d\tcount: %d\n", mod->hash, *count);
