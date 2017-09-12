@@ -6,7 +6,7 @@
 /*   By: mmorel <mmorel@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/07 21:59:10 by mmorel            #+#    #+#             */
-/*   Updated: 2017/06/07 21:59:11 by mmorel           ###   ########.fr       */
+/*   Updated: 2017/08/14 18:58:05 by mmorel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,9 @@ char			*ft_pf_llutoa_base(uintmax_t n, int base)
 	char			*str;
 	intmax_t		size;
 	static char		*hex = "0123456789abcdef";
-	// printf("LOWER ACTIVE\n");
-	// printf("[ft_itoa] Num: %lu\n", n);
+
 	str = NULL;
 	size = ft_pf_llu_len_base(n, base);
-	// printf("[ft_itoa] size:%jd\n", size);
 	if (n == 0)
 		return ("0");
 	else
@@ -29,7 +27,6 @@ char			*ft_pf_llutoa_base(uintmax_t n, int base)
 		if (!(str = (char*)malloc(sizeof(char) * size)))
 			return (NULL);
 		str[size--] = '\0';
-		// size--;
 		while (n >= (uintmax_t)base)
 		{
 			str[size] = hex[(n % base)];
@@ -38,8 +35,6 @@ char			*ft_pf_llutoa_base(uintmax_t n, int base)
 		}
 		str[size] = hex[(n % base)];
 	}
-	// str[size - 1] = '\0';
-	// printf("str: %s\n", str);
 	return (str);
 }
 
@@ -48,11 +43,9 @@ char			*ft_pf_llutoa_base_up(uintmax_t n, int base)
 	char			*str;
 	intmax_t		size;
 	static char		*hex = "0123456789ABCDEF";
-	// printf("UP ACTIVE\n");
-	// printf("[ft_itoa] Num: %lu\n", n);
+
 	str = NULL;
 	size = ft_pf_llu_len_base(n, base);
-	// printf("[ft_itoa] size:%jd\n", size);
 	if (n == 0)
 		return ("0");
 	else
@@ -60,7 +53,6 @@ char			*ft_pf_llutoa_base_up(uintmax_t n, int base)
 		if (!(str = (char*)malloc(sizeof(char) * size)))
 			return (NULL);
 		str[size--] = '\0';
-		// size--;
 		while (n >= (uintmax_t)base)
 		{
 			str[size] = hex[(n % base)];
@@ -69,8 +61,6 @@ char			*ft_pf_llutoa_base_up(uintmax_t n, int base)
 		}
 		str[size] = hex[(n % base)];
 	}
-	// str[size - 1] = '\0';
-	// printf("str: %s\n", str);
 	return (str);
 }
 
@@ -80,10 +70,8 @@ char			*ft_pf_hhutoa_base(unsigned char n, int base)
 	intmax_t		size;
 	static char		*hex = "0123456789abcdef";
 
-	// printf("[ft_itoa] Num: %hhx\n", (unsigned char)n);
 	str = NULL;
 	size = ft_pf_hhu_len_base(n, base);
-	// printf("[ft_itoa] size:%jd\n", size);
 	if (n == 0)
 		return ("0");
 	else
@@ -94,14 +82,11 @@ char			*ft_pf_hhutoa_base(unsigned char n, int base)
 		while (n >= (uintmax_t)base)
 		{
 			str[size] = hex[(n % base)];
-			// printf("str[size]: %c\n", str[size]);
 			n /= base;
 			size--;
 		}
 		str[size] = hex[(n % base)];
 	}
-	// str[size - 1] = '\0';
-	// printf("str: %s\n", str);
 	return (str);
 }
 
@@ -111,10 +96,8 @@ char			*ft_pf_hhutoa_base_up(unsigned char n, int base)
 	intmax_t		size;
 	static char		*hex = "0123456789ABCDEF";
 
-	// printf("[ft_itoa] Num: %zu\n", n);
 	str = NULL;
 	size = ft_pf_hhu_len_base(n, base);
-	// printf("[ft_itoa] size:%jd\n", size);
 	if (n == 0)
 		return ("0");
 	else
@@ -130,7 +113,5 @@ char			*ft_pf_hhutoa_base_up(unsigned char n, int base)
 		}
 		str[size] = hex[(n % base)];
 	}
-	// str[size - 1] = '\0';
-	// printf("str: %s\n", str);
 	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: mmorel <mmorel@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/07 22:08:25 by mmorel            #+#    #+#             */
-/*   Updated: 2017/06/07 22:08:26 by mmorel           ###   ########.fr       */
+/*   Updated: 2017/08/15 13:53:08 by mmorel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,3 @@ int		ft_pf_hhu_len_base(unsigned char n, const int base)
 		return (i + 1);
 	}
 }
-

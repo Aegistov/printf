@@ -6,7 +6,7 @@
 /*   By: mmorel <mmorel@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/11 14:17:14 by mmorel            #+#    #+#             */
-/*   Updated: 2017/06/11 14:17:15 by mmorel           ###   ########.fr       */
+/*   Updated: 2017/08/15 13:58:10 by mmorel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int		ft_printf_c(va_list insertion, t_mods *mod)
 {
 	t_pf_string	chr;
-	int		width;
+	int			width;
 
 	width = mod->width;
 	ft_pf_str_init(&chr);
@@ -31,7 +31,7 @@ int		ft_printf_c(va_list insertion, t_mods *mod)
 	if (!mod->left_align && chr.wpad)
 		ft_putstr_fd(chr.wpad, 1);
 	ft_putchar_fd(chr.arg.ch, 1);
-	if(mod->left_align && chr.wpad)
+	if (mod->left_align && chr.wpad)
 		ft_putstr_fd(chr.wpad, 1);
 	return (chr.len + mod->width);
 }
@@ -58,7 +58,7 @@ int		ft_printf_s(va_list insertion, t_mods *mod)
 		ft_putstr_fd(str.wpad, 1);
 	while (str.arg.str[++index] != '\0' && index < str.len)
 		ft_putchar_fd(str.arg.str[index], 1);
-	if(mod->left_align && str.wpad)
+	if (mod->left_align && str.wpad)
 		ft_putstr_fd(str.wpad, 1);
 	return (str.len + mod->width);
 }

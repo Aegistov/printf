@@ -6,7 +6,7 @@
 /*   By: mmorel <mmorel@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/11 12:21:23 by mmorel            #+#    #+#             */
-/*   Updated: 2017/05/11 12:21:24 by mmorel           ###   ########.fr       */
+/*   Updated: 2017/09/12 16:00:20 by mmorel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,7 +139,6 @@ int		ft_printf_xX(va_list insertion, t_mods *mod);
 int		ft_printf_s(va_list insertion, t_mods *mod);
 int		ft_printf_c(va_list insertion, t_mods *mod);
 int		ft_printf_C(va_list insertion, t_mods *mod);
-int 	ft_printf_S(va_list insertion, t_mods *mod);
 
 void		ft_pf_str_init(t_pf_string *str);
 int		ft_pf_str_precision_check(char *str, int precision);

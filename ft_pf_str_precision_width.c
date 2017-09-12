@@ -6,7 +6,7 @@
 /*   By: mmorel <mmorel@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/11 14:20:07 by mmorel            #+#    #+#             */
-/*   Updated: 2017/06/11 14:20:09 by mmorel           ###   ########.fr       */
+/*   Updated: 2017/08/15 14:03:55 by mmorel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int		ft_pf_str_precision_check(char *str, int precision)
 	}
 	else
 		len = ft_strlen(str);
-	// printf("Len in precision_check: %d\n", len);
 	return (len);
 }
 
@@ -36,7 +35,7 @@ char	*ft_pf_str_width_pad(t_mods *mod, int len, int sign)
 {
 	char	*pad;
 	int		flag_sign;
-	int 	width;
+	int		width;
 
 	width = mod->width;
 	flag_sign = 0;
@@ -45,14 +44,11 @@ char	*ft_pf_str_width_pad(t_mods *mod, int len, int sign)
 		flag_sign = 1;
 	if (width - len - flag_sign > 0)
 	{
-		// printf("Width: %d\tLen: %d\tflag_sign: %d\n", *width, len, flag_sign);
 		mod->width -= (len + flag_sign + sign);
 		if (mod->zero)
 			pad = ft_strfill(pad, '0', mod->width);
 		else
 			pad = ft_strfill(pad, ' ', mod->width);
-		// *width -= len - flag_sign;
-		// printf("Width in padding: %d\nPadding: %s\n", *width, pad);
 	}
 	return (pad);
 }

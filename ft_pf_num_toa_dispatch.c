@@ -6,7 +6,7 @@
 /*   By: mmorel <mmorel@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/07 21:40:20 by mmorel            #+#    #+#             */
-/*   Updated: 2017/06/07 21:40:22 by mmorel           ###   ########.fr       */
+/*   Updated: 2017/08/15 14:05:26 by mmorel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,19 @@ char	*ft_pf_ud_toa_dispatch(t_mods *mod, uintmax_t nbr, int base)
 	char	*str;
 
 	str = NULL;
-	if (mod->length == ll || mod->length == z || mod->length == j || mod->length == l)
-		{
-			// printf("case 1\n");
+	if (mod->length == ll || mod->length == z ||
+			mod->length == j || mod->length == l)
+	{
 		str = (mod->arg == 'X') ? ft_pf_llutoa_base_up(nbr, base) :
 			ft_pf_llutoa_base(nbr, base);
-		}
+	}
 	else if (mod->length == hh)
 	{
-		// printf("Case 2\n");
 		str = (mod->arg == 'X') ? ft_pf_hhutoa_base_up(nbr, base) :
 			ft_pf_hhutoa_base(nbr, base);
 	}
 	else
 	{
-		// printf("Case 3\n");
 		str = (mod->arg == 'X') ? ft_itoa_base_up(nbr, base) :
 			ft_itoa_base(nbr, base);
 	}
