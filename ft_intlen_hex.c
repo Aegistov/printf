@@ -12,7 +12,7 @@
 
 #include "libftprintf.h"
 
-int 	ft_intlen_hex(uintmax_t n)
+int		ft_intlen_hex(uintmax_t n)
 {
 	unsigned int	count;
 

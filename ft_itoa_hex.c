@@ -24,10 +24,8 @@ char		*ft_itoc_hex(uintmax_t n, char *str, unsigned int size, int arg)
 			str[size] = ((num % 16) + '0');
 		else
 		{
-			if (arg == 'X')
-				str[size] = ((num % 16) - 10 + 'A');
-			else
-				str[size] = ((num % 16) - 10 + 'a');
+			str[size] = (arg == 'X') ?
+				((num % 16) - 10 + 'A') : ((num % 16) - 10 + 'a');
 		}
 		num /= 16;
 		size--;
@@ -36,10 +34,8 @@ char		*ft_itoc_hex(uintmax_t n, char *str, unsigned int size, int arg)
 		str[size] = ((num % 16) + '0');
 	else
 	{
-		if (arg == 'X')
-			str[size] = ((num % 16) - 10 + 'A');
-		else
-			str[size] = ((num % 16) - 10 + 'a');
+		str[size] = (arg == 'X') ?
+			((num % 16) - 10 + 'A') : ((num % 16) - 10 + 'a');
 	}
 	return (str);
 }

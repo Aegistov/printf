@@ -12,55 +12,46 @@
 
 #include "libftprintf.h"
 
+int		arg_filter(const char *restrict format,
+	int *index, int *len, va_list arguments)
+{
+	if (format[(*index)] == '%')
+	{
+		if (format[(*index) + 1] == '%')
+		{
+			ft_putchar_fd(format[(*index) + 1], 1);
+			(*index) += 2;
+		}
+		else if (format[(*index) + 1] != '\0')
+		{
+			(*len) += ft_printf_parse(format, arguments, &(*index));
+			(*index)++;
+		}
+		else
+			return (0);
+	}
+	else
+	{
+		ft_putchar_fd(format[(*index)], 1);
+		(*len)++;
+		(*index)++;
+	}
+	return (1);
+}
 
 int		ft_printf(const char *restrict format, ...)
 {
 	va_list		arguments;
 	int			index;
 	int			len;
-	// char		*str;
-	// char		*tmp;
 
-	// str = (char *)malloc(2);
 	len = 0;
 	index = 0;
 	va_start(arguments, format);
-	// printf("Reading initiated...\n");
 	while (format[index] != '\0')
 	{
-		if (format[index] == '%')
-		{
-			if (format[index + 1] == '%')
-			{
-				ft_putchar_fd(format[index + 1], 1);
-				index += 2;
-			}
-			else if (format[index + 1] != '\0')
-			{
-				// printf("Activated\n");
-				// index++;
-				// len += ft_strlen(format);
-				// index++;
-				len += ft_printf_parse(format, arguments, &index);
-				index++;
-			}
-			else
-				return (0);
-			// printf("len after parse: %d\n", len);
-		}
-		else
-		{
-			ft_putchar_fd(format[index], 1);
-			// printf("Char: %c\tLen: %d\n", format[index], len);
-			len++;
-			// tmp = ft_strchjoin(str, format[index]);
-			// free (str);
-			// str = tmp;
-			// printf("str: %s\n", str);
-			index++;
-		}
+		if (!arg_filter(format, &index, &len, arguments))
+			return (0);
 	}
-	// printf("Reading complete.\n");
-	// ft_putchar_fd(*format, 1);
 	return (len);
 }

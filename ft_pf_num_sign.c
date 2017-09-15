@@ -17,7 +17,7 @@ int		ft_pf_num_sign(t_mods *mod, int sign, char *pad)
 	int		count;
 
 	count = 0;
-	if (mod->plus && sign == 0 && (mod->arg == 'd' || mod ->arg == 'i'))
+	if (mod->plus && sign == 0 && (mod->arg == 'd' || mod->arg == 'i'))
 	{
 		ft_putchar_fd('+', 1);
 		count++;
@@ -27,15 +27,13 @@ int		ft_pf_num_sign(t_mods *mod, int sign, char *pad)
 		if (pad && pad[0] != ' ')
 		{
 			ft_putchar_fd('-', 1);
-			// count++;
 		}
 		else if (!pad)
 		{
 			ft_putchar_fd('-', 1);
-			// count++;
 		}
 	}
-	else if (mod->space && sign == 0 && (mod->arg == 'd' || mod ->arg == 'i'))
+	else if (mod->space && sign == 0 && (mod->arg == 'd' || mod->arg == 'i'))
 	{
 		ft_putchar_fd(' ', 1);
 		count++;

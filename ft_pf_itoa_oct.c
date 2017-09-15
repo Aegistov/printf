@@ -25,7 +25,7 @@ char	*ft_itoc_oct(uintmax_t n, char *str, unsigned int size)
 		size--;
 	}
 	str[size] = ((num % 8) + '0');
-	return(str);
+	return (str);
 }
 
 char	*ft_pf_itoa_oct(uintmax_t n)

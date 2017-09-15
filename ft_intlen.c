@@ -14,7 +14,7 @@
 
 int		ft_intlen_base(intmax_t n, int base)
 {
-	intmax_t		i;
+	intmax_t	i;
 
 	i = 0;
 	if (n > 0)
@@ -36,7 +36,6 @@ int		ft_intlen_base(intmax_t n, int base)
 		return (i + 1);
 	}
 }
-
 
 int		ft_intlen(intmax_t n)
 {

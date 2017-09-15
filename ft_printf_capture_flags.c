@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_capture_flags.c                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmorel <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/09/15 00:23:47 by mmorel            #+#    #+#             */
+/*   Updated: 2017/09/15 00:23:48 by mmorel           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libftprintf.h"
 
 int	ft_printf_capture_flags(const char *restrict format, t_mods *mod, int index)
@@ -5,8 +17,8 @@ int	ft_printf_capture_flags(const char *restrict format, t_mods *mod, int index)
 	int		count;
 
 	count = 0;
-	// printf("cap_flags index: %d\n", index);
-	while (format[index] == '-' || format[index] == '0' || format[index] == '+' || format[index] == '#' || format[index] == ' ')
+	while (format[index] == '-' || format[index] == '0' ||
+		format[index] == '+' || format[index] == '#' || format[index] == ' ')
 	{
 		if (format[index] == '-')
 			mod->left_align = 1;
@@ -18,10 +30,8 @@ int	ft_printf_capture_flags(const char *restrict format, t_mods *mod, int index)
 			mod->hash = 1;
 		if (format[index] == ' ')
 			mod->space = 1;
-		// printf("Format: %c\nFlags: %s\n", format[index], flags);
 		index += 1;
 		count++;
 	}
-	// printf("[cap_flags] count: %d\n", count);
 	return (count);
 }

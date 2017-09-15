@@ -59,4 +59,3 @@ int		ft_pf_hhd_len_base(char n, const int base)
 		return (i + 1);
 	}
 }
-

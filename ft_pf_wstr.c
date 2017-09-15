@@ -43,10 +43,8 @@ int		ft_pf_wstr_len(wchar_t *str)
 	int		len;
 
 	len = 0;
-	// printf("Getting length\n");
 	if (!str)
 	{
-		// printf("Null\n");
 		return (ft_printf("(null)"));
 	}
 	while (*str)

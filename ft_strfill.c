@@ -9,6 +9,7 @@
 /*   Updated: 2017/05/16 20:53:52 by mmorel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libftprintf.h"
 
 char	*ft_strfill(char *str, char c, int len)
@@ -29,6 +30,5 @@ char	*ft_strfill(char *str, char c, int len)
 		str = tmp;
 	else
 		str = ft_strncpy(str, tmp, (size_t)len);
-	// printf("[ft_strfill] Str:%sEnd\n", str);
 	return (str);
 }
